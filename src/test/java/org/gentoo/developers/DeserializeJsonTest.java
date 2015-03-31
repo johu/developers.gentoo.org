@@ -19,11 +19,11 @@ public class DeserializeJsonTest {
     }
 
     @Test
-    public void testRead() throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
+    public void read() throws IOException {
         File f = new File(getClass().getResource("/gentoo-developers.json").getFile());
         assertNotNull(f);
 
+        ObjectMapper mapper = new ObjectMapper();
         Developers developers = mapper.readValue(f, Developers.class);
         assertNotNull(developers);
     }
