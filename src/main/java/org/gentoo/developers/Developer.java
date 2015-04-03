@@ -2,6 +2,8 @@ package org.gentoo.developers;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.geo.Point;
+import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
@@ -15,9 +17,10 @@ public class Developer {
     private String nick;
     private String name;
     private String joined;
-    private double lat;
-    private double lon;
+    private double latitude;
+    private double longitude;
+    @GeoSpatialIndexed
+    private Point location;
     private String roles;
-    private String loc;
-
+    private String place;
 }

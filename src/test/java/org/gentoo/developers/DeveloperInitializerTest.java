@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import java.io.IOException;
 import java.util.List;
 
+import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Matchers.any;
@@ -63,9 +64,13 @@ public class DeveloperInitializerTest {
             assertNotNull(dev.getName());
             assertNotNull(dev.getJoined());
             assertNotNull(dev.getRoles());
-            assertNotNull(dev.getLat());
-            assertNotNull(dev.getLon());
-            assertNotNull(dev.getLoc());
+            assertNotNull(dev.getLatitude());
+            assertNotNull(dev.getLongitude());
+            assertNotNull(dev.getPlace());
+            assertNotNull(dev.getLocation());
+
+            assertEquals(dev.getLongitude(), dev.getLocation().getX());
+            assertEquals(dev.getLatitude(), dev.getLocation().getY());
         }
     }
 
