@@ -3,6 +3,9 @@ language: java
 jdk:
   - oraclejdk8
 
+service:
+  - mongodb
+
 cache:
   directories:
     - $HOME/.m2
