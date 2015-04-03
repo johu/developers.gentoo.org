@@ -7,4 +7,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
  */
 public interface DeveloperRepository extends PagingAndSortingRepository<Developer, String> {
 
+    Developer findByNick(String id);
+
 }
