@@ -1,10 +1,9 @@
 package org.gentoo.developers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,9 +15,8 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by johu on 31.03.15.
  */
+@Slf4j
 public class DeserializeJsonTest {
-
-    private static final Logger LOG = LoggerFactory.getLogger(DeserializeJsonTest.class);
 
     private static final String KEY = "developers";
 
@@ -46,7 +44,7 @@ public class DeserializeJsonTest {
         assertTrue(!devs.isEmpty());
 
         for (Developer dev : devs) {
-            LOG.debug(dev.toString());
+            log.debug(dev.toString());
             assertNotNull(dev.getNick());
             assertNotNull(dev.getName());
             assertNotNull(dev.getJoined());
