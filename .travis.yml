@@ -17,4 +17,4 @@ install: true
 script: "mvn clean dependency:list test -Dsort"
 
 after_success:
-  - coveralls
+  - mvn cobertura:cobertura coveralls:report
